@@ -1,0 +1,8 @@
+<!--components/lyric/lyric.wxml-->
+<scroll-view hidden="{{isLyricShow}}" scroll-y="true" scroll-top="{{scrollTop}}" scroll-with-animation="true" class="lycbox">
+  <view class="lyccontainer">
+    <block wx:for="{{lycTime}}" wx:key="item">
+      <view class="lyric {{index==nowLyricIndex?'hightlight-lyric':''}}">{{item[1]}}</view>
+    </block>
+  </view>
+</scroll-view>

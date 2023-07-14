@@ -1,0 +1,14 @@
+<!--components/smusiclist/smusiclist.wxml-->
+<block wx:for="{{smusiclist[0]}}" wx:key="id">
+  <view class="musiclist-container {{item.id === playmusicId ? 'playing': ''}}" data-index="{{index}}" hidden="{{smshow}}"
+  bind:tap="enterplay" data-musicid="{{item.id}}" data-index="{{index}}">
+    <view class="musiclist-index">{{index+1}}</view>
+    <view class="musiclist-info">
+      <view class="musiclist-name">
+        {{item.name}}
+        <text class="musiclist-alia">{{}}</text>
+      </view>
+      <view class="musiclist-singer">{{item.artists[0].name}} - {{item.album.name}}</view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,127 @@
+/* pages/player/player.wxss */
+/*设置主界面(父容器)*/
+page {
+  height: 100%;
+  position: relative;
+  /*background-color: black;*/
+  display: flex;
+  /*设置弹性盒*/
+  flex-direction: column;
+  /*从上到下布局*/
+  /*filter:blur(4rpx);*/
+  /*设置容器的模糊程度*/
+}
+
+/*设置背景图片*/
+.bg {
+  width: 170%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  filter:blur(70rpx);
+  opacity: 0.8;
+  z-index:-1;
+}
+.hand{
+  content: '';
+  width: 192rpx;
+  height: 300rpx;
+  position: absolute;
+  top: -31rpx;
+  left: 340rpx;
+  background-color: black;
+  background: url('https://s3.music.126.net/m/s/img/needle.png?702cf6d95f29e2e594f53a3caab50e12') no-repeat center/contain;
+  transform: rotate(-15deg);
+  transform-origin: 24rpx 10rpx;
+  transition: transform 0.5s ease;
+  z-index:2;
+}
+.hand.play{
+  /*top:500rpx;*/
+  transform: rotate(7deg);
+  z-index:2;
+}
+.musicname {
+  position:absolute;
+  width:100%;
+  top:50rpx;
+  text-align: center;
+  font-size: 50rpx;
+  line-height: 70rpx;
+  color: white;
+  z-index: 3;
+  /*filter:blur(1rpx);*/
+  /*设置容器的模糊程度*/
+  /*background-color:yellow;*/
+}
+swiper {
+  /*background-color:pink;*/
+  /*position:absolute;*/
+  /*top:500rpx;*/
+  flex: 1;
+  /*z-index:1;*/
+ /* z-index:10;*/
+  
+}
+
+swiper swiper-item {
+  position: relative;
+  display: flex;
+  top: -8%;
+}
+
+swiper swiper-item image {
+  display: block;
+  width: 315rpx;
+  height: 315rpx;
+  border-radius: 50%;
+  border: 105rpx solid #313131;
+  box-shadow: 0rpx 0rpx 60rpx rgb(255, 255, 255);
+  margin: auto;
+  animation: play 12s linear infinite;
+}
+swiper swiper-item .rotation.pause{
+  animation-play-state: paused;
+}
+@keyframes play {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*歌词组件*/
+.lyric{
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  top:255rpx;
+  /*z-index:1;*/
+
+}
+/*进度条*/
+.progress-bar {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 21%;
+}
+
+.footer {
+  height: 150rpx;
+  /*background-color:skyblue;*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.footer image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 0rpx 20rpx rgb(255, 255, 255)
+}

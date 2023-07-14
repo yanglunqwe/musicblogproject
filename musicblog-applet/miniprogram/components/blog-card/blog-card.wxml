@@ -1,0 +1,27 @@
+<!--components/blog-card/blog-card.wxml-->
+<view class="blog">
+  <!--头部-->
+  <view class="header">
+    <!--用户头像-->
+    <image class="userprofile" src="{{blog.avatarUrl}}"></image>
+    <!--用户昵称和日期-->
+    <view class="useraddtime">
+      <view class="user">{{blog.nickName}}</view>
+      <view class="time">{{_createTime}}</view>
+    </view>
+  </view>
+  <!--博客内容-->
+  <!--文本-->
+  <view class="content">
+    <text>{{blog.content}}</text>
+  </view>
+  <!--图片-->
+  <view class="photos">
+    <block wx:for="{{blog.img}}" wx:key="index">
+      <image class="photo" src="{{item}}" mode="aspectFill" 
+      catch:tap="onPreviewImage"
+      data-imgsrc="{{item}}"
+      data-imgs="{{blog.img}}"></image>
+    </block>
+  </view>
+</view>

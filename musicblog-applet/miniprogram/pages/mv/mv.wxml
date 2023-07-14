@@ -1,0 +1,10 @@
+<!--pages/mv/mv.wxml-->
+<view class="content">
+  <block wx:for="{{mvlist}}" wx:key="id">
+    <view class="item" bind:tap="enterplay"data-mvid="{{item.id}}">
+      <image src="{{item.cover}}" class="photo"></image>
+      <text class="count">{{item.playCount}}</text>
+      <view class="name">{{item.name}}</view>
+    </view>
+  </block>
+</view>

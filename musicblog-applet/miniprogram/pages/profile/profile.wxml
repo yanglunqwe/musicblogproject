@@ -1,0 +1,31 @@
+<!--pages/profile/profile.wxml-->
+<view class="profile-header">
+  <view class="usephoto">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="usename"></open-data>
+</view>
+<!--菜单列表-->
+<view class="nav">
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-playhistory/profile-playhistory">
+      <image src="../../images/最近播放.png" class="icon-left"></image>
+      <text class="text">最近播放</text>
+      <image src="../../images/向右.png" class="icon-right"></image>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-bloghistory/profile-bloghistory">
+      <image src="../../images/我的发现.png" class="icon-left"></image>
+      <text class="text">我的发现</text>
+      <image src="../../images/向右.png" class="icon-right"></image>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <view class="content" bind:tap="entermvlist">
+      <image src="../../images/小程序码.png" class="icon-left"></image>
+      <text class="text">推荐MV</text>
+      <image src="../../images/向右.png" class="icon-right"></image>
+    </view>
+  </view>
+</view>

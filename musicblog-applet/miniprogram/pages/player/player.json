@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "x-progress-bar":"/components/progress-bar/progress-bar",
+    "x-lyric":"/components/lyric/lyric"
+  },
+  "disableScroll":true,
+  "navigationBarBackgroundColor": "#DAA520",
+  "navigationBarTitleText":"音乐播放"
+}

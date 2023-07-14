@@ -1,0 +1,7 @@
+<!--components/bottom-modal/bottom-modal.wxml-->
+<view class="modal" hidden="{{!modalShow}}">
+  <view class="panel">
+    <image src="../../images/删除.png" class="delete" bind:tap="windowClose"></image>
+    <slot name="modal-content"></slot>
+  </view>
+</view>

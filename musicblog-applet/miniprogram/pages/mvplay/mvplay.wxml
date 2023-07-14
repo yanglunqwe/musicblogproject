@@ -1,0 +1,4 @@
+<!--pages/mvplay/mvplay.wxml-->
+<view class="content">
+  <video src="{{src}}" autoplay="autoplay" class="video"></video>
+</view>

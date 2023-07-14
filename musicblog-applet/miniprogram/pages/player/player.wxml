@@ -1,0 +1,32 @@
+<!--pages/player/player.wxml-->
+<image class="bg" src="{{picUrl}}"></image>
+<view class="hand {{ action.method === 'play'? 'play' : ''}}" hidden="{{isLyricShow}}">
+</view>
+<view class="musicname">{{musicName}}</view>
+<!--轮播组件-->
+<swiper circular="true">
+  <block wx:for="{{musiclist}}" wx:key="this" wx:for-index="in">
+    <swiper-item bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' disabled="false">
+      <image class="rotation {{action.method=='play'?'' : 'pause'}}" data-index="{{in}}" src="{{picUrl}}"
+        hidden="{{isLyricShow}}" bindtap="lyricShow"></image>
+      <!--歌词组件-->
+      <x-lyric class="lyric" isLyricShow="{{!isLyricShow}}" bindtap="lyricShow" lyric="{{lyric}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--进度条组件-->
+<view class="progress-bar">
+  <x-progress-bar bind:nextSong="nextsong" 
+  bind:timeUpdate="timeUpdate"
+  bind:musicPlay="onPlay"
+  bind:musicPause="onPause"
+  isSame="{{isSame}}"/>
+</view>
+<!--底部歌曲按钮组件-->
+<!--底部-->
+<view class="footer">
+  <image bindtap="prevsong" src="../../images/上一曲.png"></image>
+  <image bindtap="playorpause" src="../../images/{{ action.method == 'play'? 'pause' : 'play'}}.png"></image>
+  <image bindtap="nextsong" src="../../images/下一曲.png"></image>
+</view>
+<!--<audio src="{{url}}" action="{{action}}" id="myAudio"></audio>-->

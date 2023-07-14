@@ -1,0 +1,6 @@
+<!--components/search/search.wxml-->
+<view class="container">
+  <image src="../../images/搜索.png" class="find"></image>
+  <input class="bar" placeholder="{{placeholder}}"placeholder-class="inbar" bindinput="onInput"></input>
+  <button class="search" bind:tap="onSearch">搜索</button>
+</view>

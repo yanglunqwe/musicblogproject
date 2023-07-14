@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText":"我的",
+  "navigationBarBackgroundColor": "#d43c33",
+  "disableScroll":true
+}

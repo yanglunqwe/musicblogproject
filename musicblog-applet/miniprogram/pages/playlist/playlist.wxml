@@ -1,0 +1,26 @@
+<!--pages/playlist/playlist.wxml-->
+<!--头部-->
+#
+<view class="header">
+  <view class="back-container" bind:tap="onBack" hidden="{{back}}">
+    <image src="../../images/返回.png" class="back"></image>
+  </view>
+  <view class="search-container">
+    <x-search bind:search="onSearch" />
+  </view>
+</view>
+<swiper class="imageContainer" indicator-dots="true" indicator-color="rgba(255,255,255,0.5)"
+  indicator-active-color="rgba(255,69,0)" autoplay="true" interval="3000" circular="true">
+  <block wx:for="{{ swiperImgUrls }}" wx:key="*this">
+    <swiper-item>
+      <!-- 图片标签 -->
+      <image src="{{ item.fileid}}" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="playlist-container">
+  <x-smusiclist smusiclist="{{smusiclist}}"  smshow="{{smshow}}" class="scontent"></x-smusiclist>
+  <block wx:for="{{playlist}}" wx:key="_id">
+    <x-playlist playlist="{{item}}" pshow="{{pshow}}"></x-playlist>
+  </block>
+</view>

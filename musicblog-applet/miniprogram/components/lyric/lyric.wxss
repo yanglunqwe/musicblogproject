@@ -1,0 +1,27 @@
+/* components/lyric/lyric.wxss */
+.lycbox{
+  width: 100%;
+  height: 100%;
+  color:white;
+  font-size: 35rpx;
+  filter: contrast(120%);
+  /*font-weight: bold;*/
+  /*font-family:Arial;*/
+}
+.lyccontainer{
+  position: relative;
+  top:50%;
+}
+.lyric{
+  min-height: 80rpx;
+  line-height:80rpx;
+  text-align: center;
+  /*display:inline-block;*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+/*高亮歌词*/
+.hightlight-lyric {
+  color:#DAA520;
+}
